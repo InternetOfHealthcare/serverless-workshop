@@ -1,9 +1,6 @@
 'use strict';
 
-module.exports.run = async (event) => {
-  if(input.event.p1=="teste") {
-  	console.log("abc");
-  }
+module.exports.handler = async (event) => {
   return {
     statusCode: 200,
     body: JSON.stringify({
