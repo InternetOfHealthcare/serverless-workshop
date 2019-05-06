@@ -1,6 +1,8 @@
 'use strict';
 var AWS = require('aws-sdk');
 
+//https://YOUR URL?source=en&target=es&text=Hello cruel world
+
 module.exports.run =  async(event) => {
   console.log(event.queryStringParameters.source);
   console.log(event.queryStringParameters.target);
