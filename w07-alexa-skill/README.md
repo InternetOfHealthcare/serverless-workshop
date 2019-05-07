@@ -45,3 +45,16 @@ Now let's have some fun doing an Alexa Skill to interact with your glucose data.
 ### 11. glucose_add. This intent allows the user to make a new glucose input and it has a slot as well called glucosa that must be configured as AMAZON.NUMBER
 
 ![image](images/11.png)
+
+### 12. Now we can start to build the model and then finish to configure the Alexa Skill endpoint. Click "Save" and "Build Model" (it will take some seconds!)
+
+![image](images/12.png)
+
+### 13. Now click "Endpoint" to configure your Lambda Function and choose Lambda Function as host service endpoint. Copy the the Alexa Skill ID:
+
+![image](images/13.png)
+
+
+### 14. Now we completed to configure our Alexa Skill but we need a Lambda NodeJS code that will be the back-end function for the skill. Let's configure the /w07-alexa-skill/serverless.yml with the right Alexa Skill ID, DynamoDB table name and also the user name:
+
+![image](images/14.png)
