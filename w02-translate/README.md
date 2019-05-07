@@ -6,6 +6,7 @@ PS. If you didn't follow the setup instructions to install Serverless Framework,
 
 Serverless Framework allows you to write Lambda code in your computer and then deploy it to AWS Cloud like a boss. All the Lambda configuration are defined in the file serverless.yml:
 
+
 ![image](images/00.png) 
 
 Let's start using by download all the workshop examples here: https://github.com/InternetOfHealthcare/serverless-workshop/archive/master.zip
