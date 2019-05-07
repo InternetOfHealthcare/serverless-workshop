@@ -2,18 +2,17 @@
 
 ## Setup
 
-### 1. [AWS Account & AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)
-### 2. NodeJS
+### 1. AWS Account Permissions
+* Open your IAM AWS Console:
 
-* 
+![image](images/01.png) 
 
-### 3. Serverless Framework
-### 4. node-red
-### 5. npm's
+### 1.1 Select your user and make sure to add (and also remove in the of the workshop!) these permissions:
 
-## Examples
+![image](images/02.png) 
 
-### 01 - NodeJS Basics
-### 02 - Amazon Translate
-### 03 - Amazon Trasnlate + API Gateway
-
+### [2. AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)
+### [3. NodeJS](https://nodejs.org/en/download/)
+### [4. Serverless Framework](https://serverless.com/)
+### [5. node-red optional](https://nodered.org/docs/getting-started/installation)
+* npm install node-red-contrib-aws
