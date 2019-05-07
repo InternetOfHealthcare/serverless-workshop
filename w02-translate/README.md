@@ -11,10 +11,12 @@ Unzip this file and then you will see one directory for each example, let's jump
 * cd w02-translate
 * serverless deploy
 
-### Type "serverless deploy" to deploy your local code to AWS Cloud
+### 1. Type "serverless deploy" to deploy your local code to AWS Cloud
 
 ![image](images/01.png) 
 
-### To test your Lambda function (not in your computer!), just type "serverless invoke -f translate -l"
+### 2. To test your Lambda function (not in your computer!), just type "serverless invoke -f translate -l"
 
 ![image](images/02.png) 
+
+### 3. Now you can try to change and play with this code!
