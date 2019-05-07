@@ -18,4 +18,14 @@ This CSV is a real file imported from Freestyle Libre:
 
 ![image](images/02.png) 
 
+### 4. Now let's upload our file clicking "Upload" and "Add Files" and then select the file /w06-S3CSVtoDynamo/CSV/glucose.csv
+
+![image](images/03.png) 
+![image](images/04.png) 
+![image](images/05.png) 
+![image](images/06.png) 
+![image](images/07.png) 
+![image](images/08.png) 
+
+
 
