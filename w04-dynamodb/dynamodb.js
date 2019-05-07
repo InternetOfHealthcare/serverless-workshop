@@ -2,9 +2,10 @@
 var AWS = require('aws-sdk');
 const uuid = require('uuid');
 const dynamoDB = new AWS.DynamoDB.DocumentClient();
+const table = "glucose";
 
 module.exports.run = async (event) => {
-  var res1 = await add_glucose("Francisco Xavier", 102);
+  var res1 = await add_glucose("Francisco Xavier", 112);
   var res2 = await read_glucose("Francisco Xavier");
 
   console.log(res1);
@@ -29,18 +30,17 @@ async function add_glucose(name, glucose) {
             "name" : name,
             "glucose_readout" : glucose,
             "input_type" : "1",
-            "time_stamp_str" : dater,
+            "time_stamp_str" : dater.toISOString(),
             "time_stamp" : dater.getTime(),
             "time_stamp_hour" : dater.getHours()	
         },
-        TableName : "gluco"
+        TableName : table
     };
     const r = dynamoDB.put(params).promise();
     return r;
 
 }
 async function read_glucose(name) {
-    var table = "gluco";
     var params,params1;
 
     params = {
