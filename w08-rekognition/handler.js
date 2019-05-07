@@ -6,8 +6,8 @@ var rekognition = new AWS.Rekognition({region: "us-east-1"});
 exports.run = (event, context, callback) => {
     console.log(event);
 
-    var bucket      = "healthcare-db";
-    var key         = "foto.png";
+    var bucket      = "w08-pictures";
+    var key         = "picture.png";
 
     var paramsS3 = {
         Bucket: bucket,
