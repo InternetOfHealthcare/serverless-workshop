@@ -4,7 +4,7 @@ S3 is our famous file storage. This example we will upload a CSV file to your S3
 
 This CSV is a real file imported from Freestyle Libre:
 
-![image](images/libre.png) 
+![image](images/libre-ok.png) 
 
 ### 1. Open your S3 console 
 
