@@ -63,7 +63,7 @@ functions:
   hello:
     handler: handler.hello
     environment:
-      TABLE_NAME: gluco
+      TABLE_NAME: glucose
       PATIENT: Rafael Senger    
     events:
       - alexaSkill: amzn1.ask.skill.5bb8427a-60cd-452f-9c53-babef8fcdebf
