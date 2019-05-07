@@ -1,6 +1,9 @@
 # Example 03 - Addding an API to your Translator with API-Gateway
 
-Now let's give access to our translation service throught the Internet / HTTP. 
+Now let's give access to our translation service throught the Internet / HTTP. To add API Gateway service to our Lambda we just added a simple configuration instruction in our serverless.yml:
+
+![image](images/00.png) 
+
 
 * cd w03-translate
 * serverless deploy
