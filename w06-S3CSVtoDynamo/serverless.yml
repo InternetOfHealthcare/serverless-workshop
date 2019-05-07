@@ -68,10 +68,10 @@ functions:
   hello:
     handler: handler.hello
     environment:
-      TABLE_NAME: gluco
+      TABLE_NAME: glucose
       PATIENT: Rafael Senger
-      BUCKET_NAME: /healthcare-db/temp
-      FILE_NAME: vini6.txt
+      BUCKET_NAME: /glucose-csv
+      FILE_NAME: glucose.csv
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
 #    Check the event documentation for details
