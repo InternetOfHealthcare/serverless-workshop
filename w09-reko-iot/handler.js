@@ -2,7 +2,8 @@
 var AWS         = require('aws-sdk');
 var s3          = new AWS.S3(); 
 var rekognition = new AWS.Rekognition({region: "us-east-1"});
-const iotData = new AWS.IotData({ endpoint: "a2p4fyajwx9lux.iot.us-east-1.amazonaws.com" });
+const iotData = 
+  new AWS.IotData({ endpoint: "a2p4fyajwx9lux.iot.us-east-1.amazonaws.com" });
 
 exports.run = (event, context, callback) => {
     console.log(event);
