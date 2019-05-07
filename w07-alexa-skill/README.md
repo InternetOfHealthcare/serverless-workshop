@@ -68,3 +68,33 @@ Now let's have some fun doing an Alexa Skill to interact with your glucose data.
 * Let's configure the /w07-alexa-skill/serverless.yml with the right Alexa Skill ID, DynamoDB table name and also the user name:
 
 ![image](images/14.png)
+
+### 15. Let's build and deploy the Lambda Function:
+
+![image](images/15.png)
+
+### 16. Now we need to look for the Lambda ID (ARN) to finish our skill. Open your Lambda console and search for w07-alexa-skill function:
+
+![image](images/16.png)
+
+### 17. Copy the ARN by clicking the icon after the name:
+
+![image](images/17.png)
+
+### 18. Finish the Alexa Skill endpoint configuration and click "Save Endpoints":
+
+![image](images/18.png)
+
+### 19. Now we are ready to test our skill! Click "Test" menu and enable test for this skill:
+
+![image](images/19.png)
+
+### 20. Now you can start playing with your skill:
+
+* abrir control de glucosa
+* cómo está mi glucosa
+* cómo está mi glucosa a las 10
+* mi glucosa és 90
+* etc.
+
+![image](images/20.png)
