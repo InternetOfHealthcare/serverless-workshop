@@ -29,13 +29,6 @@ Rekognition is a service that can use Artificial Intelligence to analyze people,
 
 ![image](images/06.png) 
 
-### 6. Now let's deploy the Lambda and run the code:
-
-* cd w08-rekognition
-* serverless deploy
-
-![image](images/06.png) 
-
 ### 7. Let's run the code:
 
 * cd w08-rekognition
