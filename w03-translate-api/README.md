@@ -2,7 +2,7 @@
 
 Now let's give access to our translation service throught the Internet / HTTP. To add API Gateway service to our Lambda we just added a simple configuration instruction in our serverless.yml:
 
-![image](images/00.png) 
+![image](images/00-ok.png) 
 
 Now let's start using the service, type the following commands to deploy it:
 
