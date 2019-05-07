@@ -4,16 +4,17 @@ Now let's go straight to the functionality by creating our own translator but...
 
 PS. If you didn't follow the setup instructions to install Serverless Framework, here is the link: 
 
-Serverless Framework allows you to write Lambda code in your computer and then deploy it to AWS Cloud like a boss. Let's start using by download all the workshop examples here: https://github.com/InternetOfHealthcare/serverless-workshop/archive/master.zip
+Serverless Framework allows you to write Lambda code in your computer and then deploy it to AWS Cloud like a boss. All the Lambda configuration are defined in the file serverless.yml:
+
+![image](images/00.png) 
+
+Let's start using by download all the workshop examples here: https://github.com/InternetOfHealthcare/serverless-workshop/archive/master.zip
 
 Unzip this file and then you will see one directory for each example, let's jump into the number two by typing the following commands inside the workshop's zip directory:
 
 * cd w02-translate
 * serverless deploy
 
-All the Lambda configuration are defined in the file serverless.yml:
-
-![image](images/00.png) 
 
 ### 1. Type "serverless deploy" to deploy your local code to AWS Cloud
 
