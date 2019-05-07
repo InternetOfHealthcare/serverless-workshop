@@ -2,8 +2,11 @@
 
 ## Setup
 
-### 1. AWS Account & AWS CLI
+### 1. [AWS Account & AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)
 ### 2. NodeJS
+
+* 
+
 ### 3. Serverless Framework
 ### 4. node-red
 ### 5. npm's
