@@ -8,7 +8,7 @@ Serverless Framework allows you to write Lambda code in your computer and then d
 
 Unzip this file and then you will see one directory for each example, let's jump into the number two:
 
-#### cd w02-translate
-#### serverless deploy
+* cd w02-translate
+* serverless deploy
 
 ![image](images/01.png) 
