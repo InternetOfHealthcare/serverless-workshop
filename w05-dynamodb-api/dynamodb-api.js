@@ -3,24 +3,7 @@ var AWS = require('aws-sdk');
 const uuid = require('uuid');
 const dynamoDB = new AWS.DynamoDB.DocumentClient();
 const table = "glucose";
-    
-module.exports.run = async (event) => {
-  var res1 = await add_glucose("Francisco Xavier", 120);
-  var res2 = await read_glucose("Francisco Xavier");
 
-  console.log(res1);
-  console.log(res2);
-  return {
-    statusCode: 200,
-    body: JSON.stringify({
-      message: 'Go Serverless v1.0! Your function executed successfully!',
-      input: event,
-    }, null, 2),
-  };
-
-  // Use this code if you don't use the http event with the LAMBDA-PROXY integration
-  // return { message: 'Go Serverless v1.0! Your function executed successfully!', event };
-};
 
 module.exports.read = async (event) => {
   var name = event.queryStringParameters.name;
