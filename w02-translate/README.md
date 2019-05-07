@@ -11,6 +11,10 @@ Unzip this file and then you will see one directory for each example, let's jump
 * cd w02-translate
 * serverless deploy
 
+All the Lambda configuration are defined in the file serverless.yml:
+
+![image](images/00.png) 
+
 ### 1. Type "serverless deploy" to deploy your local code to AWS Cloud
 
 ![image](images/01.png) 
@@ -19,4 +23,4 @@ Unzip this file and then you will see one directory for each example, let's jump
 
 ![image](images/02.png) 
 
-### 3. Now you can try to change and play with this code!
+### 3. Now you can try to change and play with this code!	
