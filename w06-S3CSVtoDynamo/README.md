@@ -4,9 +4,9 @@ S3 is our famous file storage. This example we will upload a CSV file to your S3
 
 This CSV is a real file imported from Freestyle Libre:
 
-![image](images/freestyle.png) 
+![image](images/libre.png) 
 
-### 1. Let's deploy the example:
+### 1. Open your S3 console 
 
 * cd w05-dynamodb-api
 * serverless deploy
