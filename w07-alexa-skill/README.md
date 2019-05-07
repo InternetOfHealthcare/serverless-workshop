@@ -26,7 +26,22 @@ Now let's have some fun doing an Alexa Skill to interact with your glucose data.
 
 ![image](images/06.png) 
 
-### 7. Let's configure the Invocation Name. This will be used like: "Alexa, open <Invocation Name>":
+### 7. Let's configure the Invocation Name and click "Save Model". This will be used like: "Alexa, abrir Control de Glucosa":
 
 ![image](images/07.png)
 
+### 8. Now we need to setup our intents, intents represents a communication between Alexa and the user. Intents have a name and also one or more utterances (phrases, expression). Click "+Add Intent" to setup our first intent.
+
+![image](images/08.png)
+
+### 9. glucose_status this intent is simple (without parameters / slot!) and will bring the average glucose.
+
+![image](images/09.png)
+
+### 10. glucose_status_hour. This intent will has a slot / parameter called "{hour}" and you must setup the slot as AMAZON.NUMBER
+
+![image](images/10.png)
+
+### 11. glucose_add. This intent allows the user to make a new glucose input and it has a slot as well called glucosa that must be configured as AMAZON.NUMBER
+
+![image](images/11.png)
