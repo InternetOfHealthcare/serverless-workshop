@@ -6,3 +6,17 @@ Now we will have a more sophisticated architecture integrating S3, Rekognition a
 
 ![image](images/01.png) 
 
+### 2. To send IoT / MQTT message we need to update our handler.js with the right IoT endpoit:
+
+![image](images/02.png) 
+
+### 3. To find your IoT endpoint open IoT Core Console:
+
+![image](images/03.png) 
+
+### 4. Click "Settings" a copy the address:
+
+![image](images/04.png) 
+
+
+
