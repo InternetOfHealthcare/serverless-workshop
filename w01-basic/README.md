@@ -25,3 +25,7 @@ To start our workshop we prepared some examples with basic sintax and NodeJS pro
 ### 6. Now let's see a leap year example. Check the code bisiesto and to run it change the Handler Field to "basic.bisiesto".
 
 ![image](images/06.png) 
+
+### 7. The default leap year output should be:
+
+![image](images/07.png) 
