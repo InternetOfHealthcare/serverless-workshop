@@ -8,7 +8,7 @@ Now let's have some fun doing an Alexa Skill to interact with your glucose data.
 
 ### 2. Click Login, create a new login if you don't have Amazon Developer account. This account is different from AWS account!
 
-![image](images/02.png) 
+![image](images/02.1.png) 
 
 ### 3. Click "Your Alexa Consoles", "Skills"
 
