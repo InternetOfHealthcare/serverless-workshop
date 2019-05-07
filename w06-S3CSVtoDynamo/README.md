@@ -44,5 +44,13 @@ This CSV is a real file imported from Freestyle Libre:
 
 ![image](images/091.png) 
 
+### 11. Inspect [the code](handler.js) and then deploy it:
+
+* cd w06-S3CSVtoDynamo
+* serverless deploy
+
+### 12. Let's run the code to import the data:
+
+![image](images/10.png) 
 
 
