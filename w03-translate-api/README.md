@@ -4,6 +4,8 @@ Now let's give access to our translation service throught the Internet / HTTP. T
 
 ![image](images/00.png) 
 
+Now let's start using the service, type the following commands to deploy it:
+
 * cd w03-translate
 * serverless deploy
 
