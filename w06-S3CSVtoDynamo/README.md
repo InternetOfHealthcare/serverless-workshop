@@ -55,3 +55,6 @@ This CSV is a real file imported from Freestyle Libre:
 
 ![image](images/11.png) 
 
+### 13. Check your DynamoDB:
+
+![image](images/12.png) 
