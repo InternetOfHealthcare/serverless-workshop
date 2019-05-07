@@ -11,14 +11,15 @@ Now we are doing the same we did with our translation service but now with Dynam
 
 ### 2. You will see two endpoints, open yuor browser and use it to read the data: 
 
-* http://YOUR READ ENDPOINT?name=Francisco Xavier
+* http://YOUR-READ-ENDPOINT?name=<NAME>
 * Ex.: https://9pudgqssn0.execute-api.us-east-1.amazonaws.com/dev/read_glucose?name=Francisco Xavier
 
 ![image](images/01.png) 
 
 ### 3. To add new glucose data use the add_glucose endpoint:
 
-* http://YOUR READ ENDPOINT?name=Francisco Xavier&glucose=95
+* http://YOUR-ADD-ENDPOINT?name=Francisco Xavier&glucose=95
 * Ex.: https://9pudgqssn0.execute-api.us-east-1.amazonaws.com/dev/add_glucose?name=Francisco Xavier&glucose=95
 
+### IMPORTANT NOTE: usually a REST API will use GET, PUT, DELETE and other HTTP methods to represent the actions. We are using HTTP GET just for convinience to test it.
 
