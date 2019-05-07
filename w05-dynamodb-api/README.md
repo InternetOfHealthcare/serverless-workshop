@@ -9,12 +9,16 @@ Now we are doing the same we did with our translation service but now with Dynam
 
 ![image](images/00.png) 
 
-### 4. Let's run the code to add new records and read the existing ones
+### 2. You will see two endpoints, open yuor browser and use it to read the data: 
 
-* serverless invoke -f dynamodb -l
+* http://YOUR READ ENDPOINT?name=Francisco Xavier
+* Ex.: https://9pudgqssn0.execute-api.us-east-1.amazonaws.com/dev/read_glucose?name=Francisco Xavier
 
-![image](images/03.png) 
+![image](images/01.png) 
 
-### 5. Go back to DynamoDB console and check if you have new records in your table:
+### 3. To add new glucose data use the add_glucose endpoint:
 
-![image](images/04.png) 
+* http://YOUR READ ENDPOINT?name=Francisco Xavier&glucose=95
+* Ex.: https://9pudgqssn0.execute-api.us-east-1.amazonaws.com/dev/add_glucose?name=Francisco Xavier&glucose=95
+
+
