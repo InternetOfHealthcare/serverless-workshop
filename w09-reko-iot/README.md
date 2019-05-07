@@ -14,9 +14,33 @@ Now we will have a more sophisticated architecture integrating S3, Rekognition a
 
 ![image](images/03.png) 
 
-### 4. Click "Settings" a copy the address:
+### 4. Click "Settings" a copy the address and past inside your handler.js function:
 
 ![image](images/04.png) 
+
+### 5. Open the IoT Console and Click "Test"
+
+![image](images/05.png) 
+
+### 6. For each picture we upload to our bucket, we should receive a message inside the topic "countPeople", so let's subscribe to this topic:
+
+![image](images/06.png) 
+
+### 7. Now let's deploy the Lambda function:
+
+* cd w09-reko-iot
+* serverless deploy
+
+![image](images/07.png) 
+
+### 8. Now it's time to upload a picture to S3 "w09-reko-iot" bucket and wait for the message here:
+
+* PS. don't use spaces in your filename! spaces are special character and may need some special encoding.
+
+![image](images/08.png) 
+
+
+
 
 
 

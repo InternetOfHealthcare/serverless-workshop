@@ -11,6 +11,10 @@ exports.run = (event, context, callback) => {
     var record      = event.Records[0];
     var bucket      = record.s3.bucket.name;
     var key         = record.s3.object.key;
+   
+    //key = key.replaceAll("+", " ");
+    console.log(bucket);
+    console.log(key);
 
     var paramsS3 = {
         Bucket: bucket,
@@ -18,6 +22,7 @@ exports.run = (event, context, callback) => {
     }            
     s3.getObject(paramsS3, function(err, json_data){
         if (err) {
+            console.log("some error opening S3 file...");
             console.log(err);
             callback(err);
         }
