@@ -14,10 +14,14 @@ To start our workshop we prepared some examples with basic sintax and NodeJS pro
 
 ![image](images/03.png) 
 
-### 4. It will ask you to configure a set of parameters to execute your program. At this point we don't need to set anything, so let's keep the standard clicking "Create".
+### 4. It will ask you to configure a set of parameters to execute your program. At this point we don't need to set anything, so let's keep the standard by naming it as "test1" clicking "Create".
 
 ![image](images/04.png) 
 
 ### 5. Click "Test" again and then you should see the following output
 
 ![image](images/05.png) 
+
+### 6. Now let's see a leap year example. Check the code bisiesto and to run it change the Handler Field to "basic.bisiesto".
+
+![image](images/06.png) 
