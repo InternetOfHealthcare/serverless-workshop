@@ -4,7 +4,7 @@ Now we will have a more sophisticated architecture integrating S3, Rekognition a
 
 ### 1. We can see at our serverless.yml config file that we are attaching our Lambda function to a S3 bucket. Every time we have a new file into the bucket w09-reko-iot this Lambda will be triggered:
 
-![image](images/01.png) 
+![image](images/01-ok.png) 
 
 ### 2. To send IoT / MQTT message we need to update our handler.js with the right IoT endpoit:
 
