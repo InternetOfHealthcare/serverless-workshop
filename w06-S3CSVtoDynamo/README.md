@@ -40,5 +40,9 @@ This CSV is a real file imported from Freestyle Libre:
 
 ![image](images/08.png) 
 
+### 10. Now let's setup some parameters in our project, open serverless.yml and change the name to the correct bucket, file name and DynamoDB table:
+
+![image](images/09.png) 
+
 
 
