@@ -27,6 +27,6 @@ DynamoDB is a no-SQL serverless database very popular at AWS. Let's start using 
 
 ![image](images/03.png) 
 
-### 5. Go back to DynamoDB console and check if have new records in your table:
+### 5. Go back to DynamoDB console and check if you have new records in your table:
 
 ![image](images/04.png) 
