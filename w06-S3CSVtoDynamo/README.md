@@ -49,8 +49,9 @@ This CSV is a real file imported from Freestyle Libre:
 * cd w06-S3CSVtoDynamo
 * serverless deploy
 
-### 12. Let's run the code to import the data:
-
 ![image](images/10.png) 
 
+### 12. Let's run the code to import the data:
+
+![image](images/11.png) 
 
