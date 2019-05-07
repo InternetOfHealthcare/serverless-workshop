@@ -25,3 +25,8 @@ Now let's have some fun doing an Alexa Skill to interact with your glucose data.
 ### 6. Now we are ready to start the skill development!
 
 ![image](images/06.png) 
+
+### 7. Let's configure the Invocation Name. This will be used like: "Alexa, open <Invocation Name>":
+
+![image](images/07.png)
+
