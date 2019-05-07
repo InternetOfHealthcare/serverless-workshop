@@ -6,24 +6,16 @@ This CSV is a real file imported from Freestyle Libre:
 
 ![image](images/libre-ok.png) 
 
-### 1. Open your S3 console 
-
-* cd w05-dynamodb-api
-* serverless deploy
+### 1. Open your S3 console and click "Create bucket". Bucket is a S3 "directory":
 
 ![image](images/00.png) 
 
-### 2. You will see two endpoints, open yuor browser and use it to read the data: 
-
-* http://YOUR-READ-ENDPOINT?name=<NAME>
-* Ex.: https://9pudgqssn0.execute-api.us-east-1.amazonaws.com/dev/read_glucose?name=Francisco Xavier
+### 2. Give a name to your bucket:
 
 ![image](images/01.png) 
 
-### 3. To add new glucose data use the add_glucose endpoint:
+### 3. Click next until you find "Create bucket"
 
-* http://YOUR-ADD-ENDPOINT?name=Francisco Xavier&glucose=95
-* Ex.: https://9pudgqssn0.execute-api.us-east-1.amazonaws.com/dev/add_glucose?name=Francisco Xavier&glucose=95
+![image](images/02.png) 
 
-### IMPORTANT NOTE: usually a REST API will use GET, PUT, DELETE and other HTTP methods to represent the actions. We are using HTTP GET just for convinience to test it.
 
