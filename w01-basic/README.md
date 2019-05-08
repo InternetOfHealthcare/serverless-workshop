@@ -22,7 +22,7 @@ To start our workshop we prepared some examples with basic sintax and NodeJS pro
 
 ![image](images/05.png) 
 
-### 6. Now let's see a leap year example. Check the code bisiesto and to run it change the Handler Field to "index.bisiesto".
+### 6. Now let's see a leap year example. Check the code bisiesto and to run it change the Handler Field to "<isindex></isindex>.bisiesto".
 
 ![image](images/06.png) 
 
