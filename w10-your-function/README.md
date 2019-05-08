@@ -10,5 +10,5 @@ To create a new NodeJS AWS Lambda project with Serverless framework type:
 * serverless deploy = full project deployment
 * serverless deploy -f <function-name> = partial function deployment, much faster!
 * serverless invoke -f <function-name> = execute your Lambda
-
+	
 Good luck!
