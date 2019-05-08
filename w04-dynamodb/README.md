@@ -23,7 +23,7 @@ DynamoDB is a no-SQL serverless database very popular at AWS. Let's start using 
 
 ### 4. Let's run the code to add new records and read the existing ones
 
-* serverless invoke -f dynamodb -l
+* serverless invoke -f dynamo -l
 
 ![image](images/03.png) 
 
