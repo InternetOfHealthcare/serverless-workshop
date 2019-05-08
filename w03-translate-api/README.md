@@ -13,7 +13,7 @@ Now let's start using the service, type the following commands to deploy it:
 
 ![image](images/01.png) 
 
-### 2. Copy the endpoint address and add ?source=en&target=rs&text=Translate this
+### 2. Copy the endpoint address and add ?source=en&target=es&text=Translate this
 
 ![image](images/02.png) 
 
