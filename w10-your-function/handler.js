@@ -7,7 +7,7 @@ const iotData = new AWS.IotData({ endpoint: "a2p4fyajwx9lux.iot.us-east-1.amazon
 const dynamoDB = new AWS.DynamoDB.DocumentClient();
 const config = {};
 const SkillMessagesES = {
-    'welcome'       :'Bienvenido Perú a nuestro skill para Alexa!',
+    'welcome'       :'Bienvenido as Cosas Locas Conectadas, que chévere!',
     'help'          :'puedes preguntarme sobre tu estado de glucosa',
     'cancel'        :'adiós',
     'stop'          :'adiós',
@@ -17,6 +17,7 @@ const SkillMessagesES = {
     'avg_glucose'	:'Su glucosa promedio es',
     'avg_glucose_h' :'Su glucosa promedio a las ',
     'add_glucose'   :'Valor de glucosa añadido a la base de datos',
+    'robot_command' :'Vale!',
     'is'		    :'és'
 };
 
@@ -43,14 +44,31 @@ var handlers = {
         this.response.speak(SkillMessages.hello);
         this.emit(':responseReady');
     },
-    'mqtt_intent': function () {
+    'robot_control': function () {
+	var direction = this.event.request.intent.slots.direction.value;
+	var delay = this.event.request.intent.slots.delay.value;
+	console.log(direction);
+	console.log(delay);
+
+	delay = parseInt(delay);
+	delay = delay* 1000;
+	console.log("delay :" + delay);
+
+	if(direction=="adelante") direction="forward";
+	else if(direction=="de regreso") direction="backward";
+	else direction="forward";
+	var payload = { "command" : direction, 
+			"frequency" : 30, 
+			"delay" : delay};
+	console.log(JSON.stringify(payload));
+
         sendMQTTMessage(res=> {
             if(res=="ok") {
-                //this.response.speak(SkillMessages.turn_on_relay);
+                this.response.speak(SkillMessages.robot_command).listen(SkillMessages.robot_command);
                 this.emit(':responseReady');
             }
-        },"xxwor","{ok:1}");
-        //this.emit(':responseReady');
+        },"robot/control",JSON.stringify(payload));
+
     },
 
     'glucose_status_hour': function () {
