@@ -44,6 +44,67 @@ var handlers = {
         this.response.speak(SkillMessages.hello);
         this.emit(':responseReady');
     },
+    'automation_light_on': function () {
+	var payload = { "command" : "lighton"} 
+
+        sendMQTTMessage(res=> {
+            if(res=="ok") {
+                this.response.speak(SkillMessages.robot_command);
+                this.emit(':responseReady');
+            }
+        },"iothub/lighton",JSON.stringify(payload));
+
+    },
+    'automation_light_off': function () {
+	var payload = { "command" : "lightoff"} 
+
+        sendMQTTMessage(res=> {
+            if(res=="ok") {
+                this.response.speak(SkillMessages.robot_command);
+                this.emit(':responseReady');
+            }
+        },"iothub/lightoff",JSON.stringify(payload));
+
+    },
+
+
+    'shelf_inventory': function () {
+	var payload = { "command" : "inventory"} 
+
+        sendMQTTMessage(res=> {
+            if(res=="ok") {
+                this.response.speak(SkillMessages.robot_command);
+                this.emit(':responseReady');
+            }
+        },"smartshelf/inventory",JSON.stringify(payload));
+
+    },
+
+    'shelf_checkout': function () {
+	var payload = { "command" : "checkout"} 
+
+        sendMQTTMessage(res=> {
+            if(res=="ok") {
+                this.response.speak(SkillMessages.robot_command);
+                this.emit(':responseReady');
+            }
+        },"smartshelf/checkout",JSON.stringify(payload));
+
+    },
+
+    'count_people': function () {
+	var payload = { "command" : "count"} 
+
+        sendMQTTMessage(res=> {
+            if(res=="ok") {
+                this.response.speak(SkillMessages.robot_command);
+                this.emit(':responseReady');
+            }
+        },"brbot/picture",JSON.stringify(payload));
+
+    },
+
+
     'robot_control': function () {
 	var direction = this.event.request.intent.slots.direction.value;
 	var delay = this.event.request.intent.slots.delay.value;
@@ -64,7 +125,7 @@ var handlers = {
 
         sendMQTTMessage(res=> {
             if(res=="ok") {
-                this.response.speak(SkillMessages.robot_command).listen(SkillMessages.robot_command);
+                this.response.speak(SkillMessages.robot_command);
                 this.emit(':responseReady');
             }
         },"robot/control",JSON.stringify(payload));
