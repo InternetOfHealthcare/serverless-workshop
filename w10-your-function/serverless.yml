@@ -19,7 +19,7 @@ service: w10-alexa-iot # NOTE: update this with your service name
 
 provider:
   name: aws
-  runtime: nodejs8.10
+  runtime: nodejs10.x
   iamRoleStatements:
       - Effect: "Allow"
         Action:
@@ -74,7 +74,8 @@ functions:
     handler: handler.hello
     environment:
       TABLE_NAME: glucose
-      PATIENT: Rafael Senger    
+      TABLE_NAME_PRESSURE: pressure
+      PATIENT: Vinicius Senger    
     events:
       - alexaSkill: amzn1.ask.skill.44fca8b7-77a9-41ba-be99-3ce730a105d1
 #    The following are a few example events you can configure

@@ -10,7 +10,6 @@
 #    docs.serverless.com
 #
 # Happy Coding!
-
 service: w03-translate-api # NOTE: update this with your service name
 
 # You can pin your service to only deploy with a specific Serverless version

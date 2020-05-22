@@ -19,7 +19,7 @@ service: w07-alexa-skill # NOTE: update this with your service name
 
 provider:
   name: aws
-  runtime: nodejs8.10
+  runtime: nodejs10.x
   iamRoleStatements:
       - Effect: "Allow"
         Action:

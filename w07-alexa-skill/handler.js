@@ -1,13 +1,14 @@
-'use strict';
-
+    \'use strict';
+ 
 var AWS = require('aws-sdk');
 const uuid = require('uuid');
 const Alexa = require('alexa-sdk');
 const iotData = new AWS.IotData({ endpoint: "a2p4fyajwx9lux.iot.us-east-1.amazonaws.com" });
 const dynamoDB = new AWS.DynamoDB.DocumentClient();
 const config = {};
+
 const SkillMessagesES = {
-    'welcome'       :'Bienvenido Perú a nuestro skill para Alexa!',
+    'welcome'       :'Bienvenido Argentina a nuestro skill para Alexa!',
     'help'          :'puedes preguntarme sobre tu estado de glucosa',
     'cancel'        :'adiós',
     'stop'          :'adiós',
@@ -16,9 +17,23 @@ const SkillMessagesES = {
     'no_register'	:'No tengo registros en este momento!',
     'avg_glucose'	:'Su glucosa promedio es',
     'avg_glucose_h' :'Su glucosa promedio a las ',
-    'add_glucose'   :'Valor de glucosa añadido a la base de datos',
+    'add_glucose'   :'Valor de glucosa agregado a la base de datos',
     'is'		    :'és'
 };
+const SkillMessagesPT = {
+    'welcome'       :'Bem-vindos ao nosso controlador de glicose galera, vamos detonar essa diabetes para poder beber mais chopps!!',
+    'help'          :'você pode me perguntar sobre seus dados de glicemia',
+    'cancel'        :'até mais',
+    'stop'          :'fui!',
+    'try_again'     :'tenta de novo ai mano',
+    'hello'         :'Olá amigos de Blumenau!',
+    'no_register'   :'Ainda não tenho registros!',
+    'avg_glucose'   :'Sua glicose média é ',
+    'avg_glucose_h' :'Sua glicose média as ',
+    'add_glucose'   :'Valor de glicose adicionado a base de dados',
+    'is'            :'é'
+};
+
 
 
 var SkillMessages = {};
@@ -26,7 +41,7 @@ var SkillMessages = {};
 exports.hello = function(event, context, callback) {
     var alexa = Alexa.handler(event, context);
     alexa.registerHandlers(handlers);
-    SkillMessages = SkillMessagesES;
+    SkillMessages = SkillMessagesPT;
     alexa.execute();
 };
 

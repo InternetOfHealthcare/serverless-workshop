@@ -12,22 +12,42 @@ const SkillMessagesES = {
     'cancel'        :'adiós',
     'stop'          :'adiós',
     'try_again'		:'inténtalo de nuevo',
-    'hello'			:'hola amigos de panamá, bienvenidos a nuestro workshop!',
+    'hello'			:'',
     'no_register'	:'No tengo registros en este momento!',
     'avg_glucose'	:'Su glucosa promedio es',
     'avg_glucose_h' :'Su glucosa promedio a las ',
     'add_glucose'   :'Valor de glucosa añadido a la base de datos',
     'robot_command' :'Vale!',
-    'is'		    :'és'
+    'is'		    :'és',
+    'turn_off'      :'apagando la luz',
+    'turn_on'       :'encendiendo la luz!'
+
 };
 
+const SkillMessagesPT = {
+    'welcome'       :'Bem-vindos ao controle de saúde por internet das coisas!',
+    'help'          :'manda ai',
+    'cancel'        :'partiu',
+    'stop'          :'fui',
+    'try_again'     :'deu não, fala ae de novo',
+    'hello'         :'Oi pessoal',
+    'no_register'   :'Xi mano, tenho dados não!',
+    'avg_glucose'   :'Sua glicemia média é ',
+    'avg_glucose_h' :'Sua glicemia média as ',
+    'add_glucose'   :'Valor de glicose adicionado ao banco de dados',
+    'add_pa'        :'Valor de pressão arterial adicionado ao banco de dados',
+    'robot_command' :'Ok!',
+    'turn_off'      :'desligando a luz',
+    'turn_on'       :'ligando a luz!',
+    'is'            :'é'
+};
 
 var SkillMessages = {};
 
 exports.hello = function(event, context, callback) {
     var alexa = Alexa.handler(event, context);
     alexa.registerHandlers(handlers);
-    SkillMessages = SkillMessagesES;
+    SkillMessages = SkillMessagesPT;    
     alexa.execute();
 };
 
@@ -39,9 +59,19 @@ var handlers = {
         this.response.speak(SkillMessages.welcome).listen(SkillMessages.try_again);
         this.emit(':responseReady');
     },
+    'robo_introduction': function () {
+        var payload = { "command" : "intro"} 
 
-    'say_hello_meetup': function () {
-        this.response.speak(SkillMessages.hello);
+        sendMQTTMessage(res=> {
+            if(res=="ok") {
+                this.response.speak("ok");
+                this.emit(':responseReady');
+            }
+        },"robot/intro",JSON.stringify(payload));
+    },
+
+    'say_hello': function () {
+        this.response.speak("Oi galera de Blumenau... Bora beber de graça que hoje é sexta e tem festão do evento!!!!");
         this.emit(':responseReady');
     },
     'automation_light_on': function () {
@@ -49,7 +79,7 @@ var handlers = {
 
         sendMQTTMessage(res=> {
             if(res=="ok") {
-                this.response.speak(SkillMessages.robot_command);
+                this.response.speak(SkillMessages.turn_on).listen(SkillMessages.try_again);
                 this.emit(':responseReady');
             }
         },"iothub/lighton",JSON.stringify(payload));
@@ -60,7 +90,7 @@ var handlers = {
 
         sendMQTTMessage(res=> {
             if(res=="ok") {
-                this.response.speak(SkillMessages.robot_command);
+                this.response.speak(SkillMessages.turn_off).listen(SkillMessages.try_again);
                 this.emit(':responseReady');
             }
         },"iothub/lightoff",JSON.stringify(payload));
@@ -106,29 +136,46 @@ var handlers = {
 
 
     'robot_control': function () {
-	var direction = this.event.request.intent.slots.direction.value;
-	var delay = this.event.request.intent.slots.delay.value;
-	console.log(direction);
-	console.log(delay);
+    	var direction = this.event.request.intent.slots.direction.value;
+    	var delay = this.event.request.intent.slots.delay.value;
+    	console.log(direction);
+    	console.log(delay);
 
-	delay = parseInt(delay);
-	delay = delay* 1000;
-	console.log("delay :" + delay);
+    	delay = parseInt(delay);
+    	delay = delay* 1000;
+    	console.log("delay :" + delay);
 
-	if(direction=="adelante") direction="forward";
-	else if(direction=="de regreso") direction="backward";
-	else direction="forward";
-	var payload = { "command" : direction, 
-			"frequency" : 30, 
-			"delay" : delay};
-	console.log(JSON.stringify(payload));
+    	if(direction=="adelante") direction="forward";
+    	else if(direction=="de regreso") direction="backward";
+    	else direction="forward";
+    	var payload = { "command" : direction, 
+    			"frequency" : 30, 
+    			"delay" : delay};
+    	console.log(JSON.stringify(payload));
+
+            sendMQTTMessage(res=> {
+                if(res=="ok") {
+                    this.response.speak(SkillMessages.robot_command);
+                    this.emit(':responseReady');
+                }
+            },"robot/control",JSON.stringify(payload));
+
+    },
+    'pa_add': function () {
+        var name = process.env.PATIENT;
+        var v1 = this.event.request.intent.slots.sistolic.value;
+        var v2 = this.event.request.intent.slots.diastolic.value;
+
+        var payload = { "name": name,
+                        "sistolic" : v1, 
+                        "diastolic" : v2 };
 
         sendMQTTMessage(res=> {
             if(res=="ok") {
-                this.response.speak(SkillMessages.robot_command);
+                this.response.speak(SkillMessages.add_pa).listen(SkillMessages.help);
                 this.emit(':responseReady');
             }
-        },"robot/control",JSON.stringify(payload));
+        },"healthcare/pa",JSON.stringify(payload));
 
     },
 
@@ -204,9 +251,27 @@ function add_glucose(callback, name, glucose) {
     dynamoDB.put(params, function(err, data){
     	callback(err, data);
     });
-   
-
 }
+function add_pa(callback, name, sis, dias) {
+    var dater =  new Date();
+    var params = {
+        Item : {
+            "id" : uuid.v1(),
+            "name" : name,
+            "sistolic" : sis,
+            "diastolic" : dias,
+            "input_type" : "1",
+            "time_stamp_str" : dater,
+            "time_stamp" : dater.getTime(),
+            "time_stamp_hour" : dater.getHours()    
+        },
+        TableName : process.env.TABLE_NAME_PRESSURE
+    };
+    dynamoDB.put(params, function(err, data){
+        callback(err, data);
+    });
+}
+
 function readAvg(callback) {
     var table = process.env.TABLE_NAME;
     var name = process.env.PATIENT;
